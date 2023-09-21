@@ -1,6 +1,9 @@
 :root {
   --border-radius: 12px;
-  
+  --primary-blue: #003A64;
+  --primary-orange: #FF4F2A;
+  --gray-darkest: #5C5958;
+  --white: #F5F5F5;
 }
 
 * {
