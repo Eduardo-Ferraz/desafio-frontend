@@ -1,9 +1,7 @@
 import Image from "next/image";
 import styles from "../app/page.module.css";
 
-interface HeaderProps {}
-
-export function Header(props: HeaderProps) {
+export function Header() {
 	return (
 		<header>
 			<div className={styles.header}>

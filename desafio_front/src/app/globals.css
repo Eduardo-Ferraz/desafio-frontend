@@ -1,9 +1,17 @@
 :root {
-  --border-radius: 12px;
+  /* --border-radius: 12px;  */
   --primary-blue: #003A64;
   --primary-orange: #FF4F2A;
+  --black: #312F2F;
   --gray-darkest: #5C5958;
+  --gray-light: #C0C1C6;
+  --gray-lightest: #E4E6F0;
   --white: #F5F5F5;
+  
+  
+  font-family: Calibri;
+  font-style: normal;
+  line-height: normal;
 }
 
 * {
@@ -16,4 +24,5 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--gray-lightest);
 }
