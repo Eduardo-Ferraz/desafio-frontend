@@ -1,5 +1,5 @@
-import styles from "../app/page.module.css";
-import { AtaItemProps } from "@/interfaces/atasInter";
+import styles from "../styles/components.module.css";
+import { AtaItemProps } from "../interfaces/atasInter";
 
 export function Ata(props: AtaItemProps) {
 	return (

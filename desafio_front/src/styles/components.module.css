@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-blue);
+  height: 69px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  width: 59.125rem;
+  padding: 0rem 2rem;
+  align-items: center;
+}
+
+.title div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.title h1 {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+}
+
+.title p {
+  color: var(--gray-darkest);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.0125rem;
+}
+
+.title Button {
+  display: flex;
+  padding: 0.3125rem 0.8125rem 0.25rem 0.8125rem;
+  align-items: center;
+  justify-self: right;
+  gap: 0.625rem;
+  border-radius: 0.3125rem;
+  background: var(--primary-orange);
+  color: var(--white);
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0/var(--o,0%));
+  transition: .4s;
+}
+
+.title Button:hover{
+  background: var(--primary-orange);
+  --o: 20%;
+}
+
+.atasSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--gray-light);
+    gap: 0.0625rem;
+  }
+  
+  .atasSection h2 {
+    color: var(--primary-blue);
+    width: fill;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.0125rem;
+    background-color: var(--white);
+  }
+  
+  .atasSection div {
+    width: fill;
+  }
+
+  .ata {
+    height: 4.625rem;
+    align-self: stretch;
+    padding: 1rem 1rem 0.88rem 0.94rem;
+    background-color: var(--white);
+  }
+  
+  .ata h3 {
+    color: var(--Black);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01rem;
+  }
+  
+  .ata p {
+    color: var(--gray-darkest);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.00875rem;
+    padding-bottom: 3rem;
+  }

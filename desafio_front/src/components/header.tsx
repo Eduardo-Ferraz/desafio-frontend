@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../app/page.module.css";
+import styles from "../styles/components.module.css";
 
 export function Header() {
 	return (

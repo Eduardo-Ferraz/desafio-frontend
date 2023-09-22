@@ -1,11 +1,13 @@
-import styles from "../app/page.module.css";
-import { AtasSectionProps } from "@/interfaces/atasInter";
-import { AtaItemProps } from "@/interfaces/atasInter";
+import styles from "../styles/components.module.css";
+import { AtasSectionProps } from "../interfaces/atasInter";
+import { AtaItemProps } from "../interfaces/atasInter";
 import { Ata } from "./ata";
 import { useState } from "react";
 
 export function AtasSection(props: AtasSectionProps) {
-	const [atasList, setAtasList] = useState<AtaItemProps[]>(props.atas);
+	const [atasList, setAtasList] = useState<AtaItemProps[] | undefined>(
+		props.atas
+	);
 
 	return (
 		<div className={styles.atasSection}>

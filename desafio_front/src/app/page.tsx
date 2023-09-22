@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@mui/material";
-
-import styles from "./page.module.css";
-import { AtasSection } from "@/components/atasSection";
-import { AtasSectionProps } from "@/interfaces/atasInter";
+import styles from "../styles/pageHome.module.css";
+import { AtasSection } from "../components/atasSection";
+import { Title } from "../components/title";
+import { AtasSectionProps } from "../interfaces/atasInter";
 
 const teste: AtasSectionProps[] = [
 	{
@@ -37,31 +36,34 @@ const teste: AtasSectionProps[] = [
 	},
 	{
 		id: 1,
-		title: "Daily Scrum",
-		atas: [
-			{
-				id: 1,
-				title: "Titulo 2",
-				data: "a",
-				hora: "b",
-				local: "c",
-			},
-		],
+		title: "Daily Scrumii",
+		atas: undefined,
+		// [
+		// {
+		// 	id: 1,
+		// 	title: "Titulo 2",
+		// 	data: "a",
+		// 	hora: "b",
+		// 	local: "c",
+		// },
+		// ],
 	},
 ];
 
-export default function Home() {
+export default function Page() {
 	const [sectionList, setSectionList] = useState<AtasSectionProps[]>(teste);
+	const [page, setPage] = useState<number>(0);
 
-	return (
-		<main className={styles.main}>
-			<div className={styles.title}>
-				<div>
-					<h1>Atas de Reunião</h1>
-					<p>Estas são as atas das últimas reuniões</p>
-				</div>
-				<Button>+ NOVA ATA</Button>
-			</div>
+	let titulo = "";
+	let desc = "";
+	let setar = null;
+	let lista = null;
+
+	if (page === 0) {
+		titulo = "Atas de Reunião";
+		desc = "Estas são as atas das últimas reuniões";
+		setar = setPage;
+		lista = (
 			<div className={styles.list}>
 				{sectionList.map((item, index) => (
 					<div key={item.id}>
@@ -69,6 +71,16 @@ export default function Home() {
 					</div>
 				))}
 			</div>
+		);
+	} else if (page === 1) {
+		titulo = "Nova Ata de Reunião";
+		desc = "Os campos obrigatórios estão marcados com um asterisco (*)";
+	}
+
+	return (
+		<main className={styles.main}>
+			<Title title={titulo} desc={desc} setPage={setar} />
+			{lista}
 		</main>
 	);
 }
