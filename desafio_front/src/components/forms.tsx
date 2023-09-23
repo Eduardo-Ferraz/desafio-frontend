@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Box, MenuItem, Select, TextField, colors } from "@mui/material";
 import { formsColors } from "../styles/textField";
 import FormsContent from "./formsContent";
+import { FormsProps } from "../interfaces/atasInter";
 
-export default function Forms(this: any) {
+export default function Forms(props: FormsProps) {
 	const [tipo, setTipo] = useState<number>(0);
 	const [local, setLocal] = useState<number>(0);
 
@@ -108,7 +109,7 @@ export default function Forms(this: any) {
 					</MenuItem>
 				</Select>
 			</div>
-			<FormsContent tipo={tipo} />
+			<FormsContent tipo={tipo} setPage={props.setPage} />
 		</div>
 	);
 }

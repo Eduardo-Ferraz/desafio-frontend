@@ -73,10 +73,11 @@ export default function Page() {
 				))}
 			</>
 		);
-	} else if (page === 1) {
+	}
+	if (page === 1) {
 		titulo = "Nova Ata de Reunião";
 		desc = "Os campos obrigatórios estão marcados com um asterisco (*)";
-		lista = <Forms />;
+		lista = <Forms setPage={setPage} />;
 	}
 
 	return (

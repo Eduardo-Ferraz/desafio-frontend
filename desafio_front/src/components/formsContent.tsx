@@ -4,6 +4,11 @@ import { formsColors } from "../styles/textField";
 import { FormsContentProps } from "../interfaces/atasInter";
 
 export default function FormsContent(props: FormsContentProps) {
+	const handleCancel = () => {
+		props.setPage(0);
+	};
+	const handleConfirm = () => {};
+
 	let textAreas = (
 		<span>
 			<p>Selecione o Tipo de Reunião</p>
@@ -135,8 +140,12 @@ export default function FormsContent(props: FormsContentProps) {
 			{textAreas}
 
 			<div className={styles.buttonGroup}>
-				<Button className={styles.buttonCancel}>cancelar</Button>
-				<Button className={styles.buttonSave}>salvar ata</Button>
+				<Button className={styles.buttonCancel} onClick={handleCancel}>
+					cancelar
+				</Button>
+				<Button className={styles.buttonSave} onClick={handleConfirm}>
+					salvar ata
+				</Button>
 			</div>
 		</div>
 	);

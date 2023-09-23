@@ -20,6 +20,11 @@ export interface TitleProps {
 	setPage: Dispatch<SetStateAction<number>> | null;
 }
 
+export interface FormsProps {
+	setPage: Dispatch<SetStateAction<number>>;
+}
+
 export interface FormsContentProps {
 	tipo: number;
+	setPage: Dispatch<SetStateAction<number>>;
 }
