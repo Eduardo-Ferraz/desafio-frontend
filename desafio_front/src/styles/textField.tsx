@@ -1,6 +1,6 @@
 export const formsColors = {
 	"& .MuiInputLabel-root": {
-		color: "#C0C1C6",
+		color: "#7B7B7B",
 	},
 	"& .MuiInputLabel-root.Mui-focused": {
 		color: "#FF4F2A",
@@ -17,5 +17,18 @@ export const formsColors = {
 		"& > fieldset": {
 			borderColor: "#FF4F2A",
 		},
+	},
+	color: "#312F2F",
+	".MuiOutlinedInput-notchedOutline": {
+		borderColor: "#C0C1C6",
+	},
+	"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+		borderColor: "#FF4F2A",
+	},
+	"&:hover .MuiOutlinedInput-notchedOutline": {
+		borderColor: "#FF4F2A",
+	},
+	".MuiSvgIcon-root ": {
+		fill: "#7B7B7B !important",
 	},
 };

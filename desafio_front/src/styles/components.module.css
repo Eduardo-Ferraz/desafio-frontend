@@ -13,23 +13,13 @@
 }
 
 .forms div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.1875rem;
   width: stretch;
 }
 
 .forms div div{
   display: flex;
   flex-direction: row;
-}
-
-.formsContent {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.88rem;
 }
 
 .formsContent h2 {
@@ -40,8 +30,7 @@
 }
 
 .formsContent h3 {
-  margin-left: 0.88rem;
-  margin-bottom: 0.63rem;
+  margin: 0rem 0.88rem 0.63rem;
   color: var(--gray-medium);
   font-size: 1rem;
   font-weight: 400;
@@ -55,14 +44,25 @@
 }
 
 .formsContent span p {
+  display: flex;
   color: var(--gray-medium);
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
+  justify-content: center;
+  margin: 2rem 0rem;
+}
+
+.mtSmall {
+  margin-top: 1.25rem;
+}
+
+.mtBig {
+  margin-top: 2.19rem;
 }
 
 .buttonGroup {
-  margin-top: 10rem;
+  margin-top: 2.56rem;
   justify-content: right;
 }
 
