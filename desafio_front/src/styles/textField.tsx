@@ -1,11 +1,9 @@
 export const formsColors = {
 	"& .MuiInputLabel-root": {
 		color: "#C0C1C6",
-		width: "100px",
 	},
 	"& .MuiInputLabel-root.Mui-focused": {
 		color: "#FF4F2A",
-		textDecorationColor: "red",
 	},
 	"& .MuiOutlinedInput-root": {
 		"& > fieldset": { borderColor: "#C0C1C6" },

@@ -1,4 +1,4 @@
-import styles from "../styles/components.module.css";
+import styles from "../styles/titleHeader.module.css";
 import { TitleProps } from "../interfaces/atasInter";
 import { Button } from "@mui/material";
 
