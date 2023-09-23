@@ -5,7 +5,7 @@ import styles from "../styles/pageHome.module.css";
 import { AtasSection } from "../components/atasSection";
 import { Title } from "../components/title";
 import { AtasSectionProps } from "../interfaces/atasInter";
-import { TextField } from "@mui/material";
+import Forms from "../components/forms";
 
 const teste: AtasSectionProps[] = [
 	{
@@ -76,35 +76,7 @@ export default function Page() {
 	} else if (page === 1) {
 		titulo = "Nova Ata de Reunião";
 		desc = "Os campos obrigatórios estão marcados com um asterisco (*)";
-		lista = (
-			<TextField
-				id="titulo"
-				label="Título *"
-				variant="outlined"
-				sx={{
-					"& .MuiInputLabel-root": {
-						color: "#FF4F2A",
-					},
-					"& .MuiInputLabel-root.Mui-focused": {
-						color: "#FF4F2A",
-						textDecorationColor: "red",
-					},
-					"& .MuiOutlinedInput-root": {
-						"& > fieldset": { borderColor: "#FF4F2A" },
-					},
-					"& .MuiOutlinedInput-root.Mui-focused": {
-						"& > fieldset": {
-							borderColor: "#FF4F2A",
-						},
-					},
-					"& .MuiOutlinedInput-root:hover": {
-						"& > fieldset": {
-							borderColor: "#FF4F2A",
-						},
-					},
-				}}
-			/>
-		);
+		lista = <Forms />;
 	}
 
 	return (

@@ -1,4 +1,4 @@
-import styles from "../styles/components.module.css";
+import styles from "../styles/atas.module.css";
 import { AtaItemProps } from "../interfaces/atasInter";
 
 export function Ata(props: AtaItemProps) {
