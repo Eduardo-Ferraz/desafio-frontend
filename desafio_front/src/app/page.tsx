@@ -5,6 +5,7 @@ import styles from "../styles/pageHome.module.css";
 import { AtasSection } from "../components/atasSection";
 import { Title } from "../components/title";
 import { AtasSectionProps } from "../interfaces/atasInter";
+import { TextField } from "@mui/material";
 
 const teste: AtasSectionProps[] = [
 	{
@@ -64,23 +65,52 @@ export default function Page() {
 		desc = "Estas são as atas das últimas reuniões";
 		setar = setPage;
 		lista = (
-			<div className={styles.list}>
+			<>
 				{sectionList.map((item, index) => (
 					<div key={item.id}>
 						<AtasSection {...item} />
 					</div>
 				))}
-			</div>
+			</>
 		);
 	} else if (page === 1) {
 		titulo = "Nova Ata de Reunião";
 		desc = "Os campos obrigatórios estão marcados com um asterisco (*)";
+		lista = (
+			<TextField
+				id="titulo"
+				label="Título *"
+				variant="outlined"
+				sx={{
+					"& .MuiInputLabel-root": {
+						color: "#FF4F2A",
+					},
+					"& .MuiInputLabel-root.Mui-focused": {
+						color: "#FF4F2A",
+						textDecorationColor: "red",
+					},
+					"& .MuiOutlinedInput-root": {
+						"& > fieldset": { borderColor: "#FF4F2A" },
+					},
+					"& .MuiOutlinedInput-root.Mui-focused": {
+						"& > fieldset": {
+							borderColor: "#FF4F2A",
+						},
+					},
+					"& .MuiOutlinedInput-root:hover": {
+						"& > fieldset": {
+							borderColor: "#FF4F2A",
+						},
+					},
+				}}
+			/>
+		);
 	}
 
 	return (
 		<main className={styles.main}>
 			<Title title={titulo} desc={desc} setPage={setar} />
-			{lista}
+			<div className={styles.list}>{lista}</div>
 		</main>
 	);
 }

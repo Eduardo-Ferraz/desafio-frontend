@@ -6,7 +6,7 @@ export function Header() {
 		<header>
 			<div className={styles.header}>
 				<Image
-					src="/logo_industriall.png"
+					src="/logo_clara.svg"
 					width={182}
 					height={45}
 					alt="Logo da industriall"
