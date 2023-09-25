@@ -3,11 +3,9 @@ import { TitleProps } from "../interfaces/atasInter";
 import { Button } from "@mui/material";
 
 export function Title(props: TitleProps) {
-	function handleClick() {
-		if (props.setPage !== null) {
-			props.setPage(1);
-		}
-	}
+	const handleClick = () => {
+		props.setPage ? props.setPage(1) : "";
+	};
 
 	let botao = null;
 	if (props.setPage !== null) {

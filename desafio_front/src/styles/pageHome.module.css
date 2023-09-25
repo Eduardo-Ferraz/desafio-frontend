@@ -22,3 +22,63 @@
   /* Shadow */
   box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.10);
 }
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 25rem;
+  width: 30rem;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3125rem;
+  background: var(--White, #F5F5F5);
+
+  /* Shadow */
+  box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.10);
+}
+
+.loginContainer p {
+  color: var(--gray-medium, #7B7B7B);
+  font-size: 0.8rem;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+
+}
+.buttonLogin {
+  width: stretch;
+  color: var(--gray-lightest);
+  background-color: var(--green);
+  padding: 0.62rem 1.31rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0/var(--o,0%));
+	transition: .4s;
+}
+
+.buttonLogin:hover {
+	background: var(--green);
+	--o: 20%;
+}
+
+.buttonLogout {
+  width: 15%;
+  justify-self: right;
+  justify-items: right;
+  color: var(--gray-medium);
+  background-color: var(--gray-lightest);
+  padding: 0.4rem 1.1rem 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+	transition: .4s;
+}
+
+.buttonLogout:hover {
+	background: var(--gray-light);
+}

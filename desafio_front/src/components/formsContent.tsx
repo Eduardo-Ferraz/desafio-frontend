@@ -74,7 +74,6 @@ export default function FormsContent(props: FormsContentProps) {
 						InputLabelProps={{ shrink: true }}
 						variant="outlined"
 						required
-						fullWidth
 						sx={formsColors}
 					/>
 				</div>

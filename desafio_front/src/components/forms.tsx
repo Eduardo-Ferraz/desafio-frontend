@@ -1,21 +1,67 @@
 import styles from "../styles/components.module.css";
 
-import { useState } from "react";
-import { Box, MenuItem, Select, TextField, colors } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Box, MenuItem, Select, TextField } from "@mui/material";
 import { formsColors } from "../styles/textField";
 import FormsContent from "./formsContent";
-import { FormsProps } from "../interfaces/atasInter";
+import { FormsProps, ILocal, ITipo } from "../interfaces/atasInter";
 
 export default function Forms(props: FormsProps) {
-	const [tipo, setTipo] = useState<number>(0);
-	const [local, setLocal] = useState<number>(0);
+	const [locaisData, setLocaisData] = useState<ILocal[] | null>();
+	const [tiposData, setTiposData] = useState<ITipo[] | null>();
+	const [idLocalEsc, setIDLocalEsc] = useState<number>(0);
+	const [idTipoEsc, setIDTipolEsc] = useState<number>(0);
+	const [tituloEsc, setTituloEsc] = useState<string>("");
+	const [dataInicioEsc, setDataInicioEsc] = useState<any>();
+	const [dataFimEsc, setDataFimEsc] = useState<any>();
 
-	const handleChangeLocal = (event: any) => {
-		setLocal(event.target.value);
+	// Atualiza os Tipos de ata e Locais quando o usuário atualiza
+	useEffect(() => {
+		handleGetLocais();
+		handleGetTiposForms();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [props.userData]);
+
+	const handleGetLocais = async () => {
+		try {
+			const response = await props.atasRequest.get("Locais", {
+				headers: {
+					Authorization: `Bearer ${props.userData?.token}`,
+				},
+			});
+			setLocaisData(response.data);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
-	const handleChangeTipo = (event: any) => {
-		setTipo(event.target.value);
+	const handleGetTiposForms = async () => {
+		const responseTipos = await props.atasRequest.get("TiposReuniao", {
+			headers: {
+				Authorization: `Bearer ${props.userData?.token}`,
+			},
+		});
+		setTiposData(responseTipos.data);
+	};
+
+	const handleChangeTitulo = (e: any) => {
+		setTituloEsc(e.target.value);
+	};
+
+	const handleChangeLocal = (e: any) => {
+		setIDLocalEsc(e.target.value);
+	};
+
+	const handleChangeDataInicio = (e: any) => {
+		setDataInicioEsc(e.target.value);
+	};
+
+	const handleChangeDataFim = (e: any) => {
+		setDataFimEsc(e.target.value);
+	};
+
+	const handleChangeTipo = (e: any) => {
+		setIDTipolEsc(e.target.value);
 	};
 
 	return (
@@ -30,6 +76,8 @@ export default function Forms(props: FormsProps) {
 					<TextField
 						id="titulo"
 						label="Título"
+						value={tituloEsc}
+						onChange={handleChangeTitulo}
 						variant="outlined"
 						required
 						fullWidth
@@ -43,21 +91,22 @@ export default function Forms(props: FormsProps) {
 				>
 					<Select
 						id="local"
-						value={local}
-						defaultValue={0}
+						value={idLocalEsc}
 						onChange={handleChangeLocal}
 						sx={formsColors}
 						required
 					>
-						{local === 0 && (
+						{idLocalEsc === 0 && (
 							<MenuItem value={0} disabled>
 								<p style={{ color: "#7B7B7B" }}>Local *</p>
 							</MenuItem>
 						)}
 
-						<MenuItem value={1}>Base 27</MenuItem>
-						<MenuItem value={2}>Home Office</MenuItem>
-						<MenuItem value={3}>Visitando Cliente</MenuItem>
+						{locaisData?.map((item: any) => (
+							<MenuItem key={item.id} value={item.id}>
+								{item.nome}
+							</MenuItem>
+						))}
 					</Select>
 				</Box>
 				<Box
@@ -70,6 +119,8 @@ export default function Forms(props: FormsProps) {
 							id="dataHoraInicio"
 							label="Data e Horário de Início"
 							type="datetime-local"
+							value={dataInicioEsc}
+							onChange={handleChangeDataInicio}
 							InputLabelProps={{ shrink: true }}
 							variant="outlined"
 							required
@@ -80,6 +131,8 @@ export default function Forms(props: FormsProps) {
 							id="dataHoraFim"
 							label="Data e Horário de Fim"
 							type="datetime-local"
+							value={dataFimEsc}
+							onChange={handleChangeDataFim}
 							InputLabelProps={{ shrink: true }}
 							variant="outlined"
 							fullWidth
@@ -89,27 +142,26 @@ export default function Forms(props: FormsProps) {
 				</Box>
 				<Select
 					id="tipo"
-					value={tipo}
+					value={idTipoEsc}
 					defaultValue={0}
 					onChange={handleChangeTipo}
 					sx={formsColors}
 					required
 				>
-					{tipo === 0 && (
+					{idTipoEsc === 0 && (
 						<MenuItem value={0} disabled>
 							<p style={{ color: "#7B7B7B" }}>Tipo de Reunião *</p>
 						</MenuItem>
 					)}
 
-					<MenuItem value={1}>Resumida</MenuItem>
-					<MenuItem value={2}>Daily Scrum</MenuItem>
-					<MenuItem value={3}>Sprint Retrospective</MenuItem>
-					<MenuItem value={4}>
-						Acompanhamento de OKRs (Objectives and Key Results)
-					</MenuItem>
+					{tiposData?.map((item: any) => (
+						<MenuItem key={item.id} value={item.id}>
+							{item.nome}
+						</MenuItem>
+					))}
 				</Select>
 			</div>
-			<FormsContent tipo={tipo} setPage={props.setPage} />
+			<FormsContent tipo={idTipoEsc} setPage={props.setPage} />
 		</div>
 	);
 }

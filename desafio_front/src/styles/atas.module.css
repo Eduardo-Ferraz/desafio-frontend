@@ -7,6 +7,7 @@
   }
   
 .atasSection h2 {
+  margin-bottom: -0.0625rem;
   color: var(--primary-blue);
   width: stretch;
   font-size: 1.25rem;

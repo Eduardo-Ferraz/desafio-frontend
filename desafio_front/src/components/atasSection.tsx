@@ -1,19 +1,16 @@
 import styles from "../styles/atas.module.css";
-import { AtasSectionProps } from "../interfaces/atasInter";
-import { AtaItemProps } from "../interfaces/atasInter";
+import { ITipo } from "../interfaces/atasInter";
 import { Ata } from "./ata";
-import { useState } from "react";
 
-export function AtasSection(props: AtasSectionProps) {
-	const [atasList, setAtasList] = useState<AtaItemProps[] | undefined>(
-		props.atas
-	);
+export function AtasSection(props: ITipo) {
+	// Para exibir os locais de cada reunião e não apenas sua ID, precisariamos usar o handleGetLocais
+	// Idealmente a função seria importada do axios.tsx
 
 	return (
 		<div className={styles.atasSection}>
-			<h2>{props.title}</h2>
+			<h2>{props.nome}</h2>
 
-			{atasList?.map((item, index) => (
+			{props.atas?.map((item: any) => (
 				<div key={item.id}>
 					<Ata {...item} />
 				</div>

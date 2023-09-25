@@ -37,8 +37,6 @@
 }
 
 .formsContent span {
-  width: 55rem;
-  height: 5.3125rem;
   justify-content: center;
   align-items: center;
 }
@@ -54,6 +52,7 @@
 }
 
 .mtSmall {
+  width:50% !important;
   margin-top: 1.25rem;
 }
 
