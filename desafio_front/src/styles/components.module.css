@@ -1,0 +1,100 @@
+.forms {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.forms h2 {
+  color: var(--gray-medium);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.0125rem;
+}
+
+.forms div {
+  width: stretch;
+}
+
+.forms div div{
+  display: flex;
+  flex-direction: row;
+  gap: 1.88rem;
+}
+
+.formsContent h2 {
+  color: var(--gray-medium);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.0125rem;
+}
+
+.formsContent h3 {
+  margin: 0rem 0.88rem 0.63rem;
+  color: var(--gray-medium);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.formsContent span {
+  justify-content: center;
+  align-items: center;
+}
+
+.formsContent span p {
+  display: flex;
+  color: var(--gray-medium);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  justify-content: center;
+  margin: 2rem 0rem;
+}
+
+.mtSmall {
+  width:50% !important;
+  margin-top: 1.25rem;
+}
+
+.mtBig {
+  margin-top: 2.19rem;
+}
+
+.buttonGroup {
+  margin-top: 2.56rem;
+  justify-content: right;
+}
+
+.buttonCancel {
+  color: var(--gray-darkest);
+  background-color: var(--gray-light);
+  padding: 0.62rem 1.31rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0/var(--o,0%));
+	transition: .4s;
+}
+
+.buttonCancel:hover {
+	background: var(--gray-light);
+	--o: 20%;
+}
+
+.buttonSave {
+  color: var(--gray-lightest);
+  background-color: var(--green);
+  padding: 0.62rem 1.31rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0/var(--o,0%));
+	transition: .4s;
+}
+
+.buttonSave:hover {
+	background: var(--green);
+	--o: 20%;
+}

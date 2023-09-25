@@ -1,0 +1,43 @@
+.atasSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--gray-light);
+    gap: 0.0625rem;
+  }
+  
+.atasSection h2 {
+  margin-bottom: -0.0625rem;
+  color: var(--primary-blue);
+  width: stretch;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.0125rem;
+  background-color: var(--white);
+}
+
+.atasSection div {
+  width: stretch;
+}
+
+.ata {
+  height: 4.625rem;
+  align-self: stretch;
+  padding: 1rem 1rem 0.88rem 0.94rem;
+  background-color: var(--white);
+}
+
+.ata h3 {
+  color: var(--Black);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+}
+
+.ata p {
+  color: var(--gray-darkest);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.00875rem;
+  padding-bottom: 3rem;
+}
